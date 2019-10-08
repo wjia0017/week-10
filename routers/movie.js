@@ -101,7 +101,8 @@ module.exports = {
 
     //6. Retrieve (Get) all the movies produced between year1 and year2, where year1 > year2
     deleteMoviesByYear: function (req,res){
-     Movie.deleteMany({year: {$lte: aYear}},function (err, movie){
+        let year1 = req.params.aYear;
+     Movie.deleteMany({year: {$lte: year1}},function (err, movie){
         if(err) return res.json(err);
         res.json(movie);
        });

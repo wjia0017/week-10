@@ -579,7 +579,7 @@ let DatabaseService = class DatabaseService {
     //   return this.http.get("/")
     // }
     deleteAllMovies(aYear) {
-        let url = "/movies/" + aYear;
+        let url = "/moviesss/" + aYear;
         return this.http.delete(url, httpOptions);
     }
 };

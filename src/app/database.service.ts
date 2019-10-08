@@ -52,7 +52,7 @@ export class DatabaseService {
   }
 
   addActor(title,name){
-    let url = '/movies/'+ title +'/'+ name
+    let url = '/movies/'+ title +'/'+ name;
     return this.http.put( url,  httpOptions);
 
   }
@@ -61,7 +61,7 @@ export class DatabaseService {
   // }
 
   deleteAllMovies(aYear){
-    let url = "/movies/" + aYear;
+    let url = "/moviesss/" + aYear;
     return this.http.delete(url, httpOptions);
 
   }
