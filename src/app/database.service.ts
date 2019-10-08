@@ -56,6 +56,13 @@ export class DatabaseService {
     return this.http.put( url,  httpOptions);
 
   }
+
+  addMovie(name,title){
+    let url = '/actors/'+ name +'/'+ title;
+    return this.http.put( url,  httpOptions);
+
+  }
+
   // getMovieBeforeAYear(){
   //   return this.http.get("/")
   // }
@@ -65,5 +72,6 @@ export class DatabaseService {
     return this.http.delete(url, httpOptions);
 
   }
+
 
 }

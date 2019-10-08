@@ -54,10 +54,10 @@ module.exports = {
     },
 
     addMovie: function (req, res) {
-        Actor.findOne({ _id: req.params.id }, function (err, actor) {
+        Actor.findOne({name: req.params.name }, function (err, actor) {
             if (err) return res.status(400).json(err);
             if (!actor) return res.status(404).json();
-            Movie.findOne({ _id: req.body.id }, function (err, movie) {
+            Movie.findOne({title : req.params.title}, function (err, movie) {
                 if (err) return res.status(400).json(err);
                 if (!movie) return res.status(404).json();
 
@@ -103,7 +103,6 @@ module.exports = {
         });
     },
 
-
     //** */
     incrementAge: function (req, res){
          Actor.find({bYear:{$lt:1969}}), function (err, actor) {
@@ -112,6 +111,8 @@ module.exports = {
             };
         };
     },
+
+
 
 
 }

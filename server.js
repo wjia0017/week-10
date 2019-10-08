@@ -73,4 +73,7 @@ app.get('/movies', movies.getActors);
 
 app.put('/movies/:title/:name', movies.addActor);
 
+app.put('/actors/:name/:title', actors.addMovie);
+
+
 

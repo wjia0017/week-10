@@ -20,6 +20,8 @@ export class ActorComponent implements OnInit {
   year: number = 0;
   movieId: string = "";
   aYear: number = 0;
+
+  tempActors: any[] = [];
   
 
 
@@ -29,6 +31,7 @@ export class ActorComponent implements OnInit {
   onGetActors() {
     this.dbService.getActors().subscribe((data: any[]) => {
       this.actorsDB = data;
+      this.onCheckActors();
     });
   }
 
@@ -112,6 +115,28 @@ export class ActorComponent implements OnInit {
 
     });
   }
+
+  onCheckActors(){
+   this.dbService.getActors().subscribe(result => {
+     let tempActors = [];
+     for (let i = 0; i < this.actorsDB.length; i++){
+       if(this.actorsDB[i].movies.length >= 2){
+         tempActors.push(this.actorsDB[i]);
+
+     }}});
+    
+  }
+
+  onAddMovie(){
+    let obj = {name: this.fullName, title: this.title};
+    this.dbService.addActor(obj.name, obj.title).subscribe(result => {
+      this.onGetMovies();
+      this.onGetActors();
+     
+    });
+    this.onAddActor()
+  }
+
 
   onGetAllMoviesBeforeAYear(){
     this.dbService.getMovie().subscribe((data: any[]) => {
