@@ -106,7 +106,7 @@ export class ActorComponent implements OnInit {
 
   onAddActor(){
     let obj = {title: this.title, name: this.fullName};
-    this.dbService.addActor(obj).subscribe(result => {
+    this.dbService.addActor(obj.title, obj.name).subscribe(result => {
       this.onGetActors();
       this.onGetMovies();
 
@@ -126,8 +126,8 @@ export class ActorComponent implements OnInit {
   //   });
   // }
   
-  onDeleteAllMovies(){
-    this.dbService.deleteAllMovies().subscribe(result => {
+  onDeleteAllMovies(aYear){
+    this.dbService.deleteAllMovies(aYear).subscribe(result => {
       this.onGetMovies();
   });
   }

@@ -47,8 +47,8 @@ module.exports = {
                 if (err) return res.status(400).json(err);
                 if (!actor) return res.status(404).json();
 
-
-                movie.actor.push(actor.name);
+                console.log(actor)
+                movie.actors.push(actor._id);
                 movie.save(function (err){
                     if(err) return res.status(500).json(err);
                     res.json(movie);

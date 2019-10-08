@@ -51,16 +51,17 @@ export class DatabaseService {
     return this.http.delete(url, httpOptions);
   }
 
-  addActor(data){
-    return this.http.put('/actors/' + data.name +'/movies/' + data.title, data,  httpOptions);
+  addActor(title,name){
+    let url = '/movies/'+ title +'/'+ name
+    return this.http.put( url,  httpOptions);
 
   }
   // getMovieBeforeAYear(){
   //   return this.http.get("/")
   // }
 
-  deleteAllMovies(){
-    let url = "/movies/";
+  deleteAllMovies(aYear){
+    let url = "/movies/" + aYear;
     return this.http.delete(url, httpOptions);
 
   }

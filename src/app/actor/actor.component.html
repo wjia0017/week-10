@@ -149,7 +149,7 @@
             <label for="movieYear">aYear</label>
             <input type="text" class="form-control" id="movieYear" [(ngModel)]="aYear">
         </div>
-        <button type ="submit" class = "btn btn-primary" (click) ="onDeleteAllMovies()">Delete Movie before aYear</button>
+        <button type ="submit" class = "btn btn-primary" (click) ="onDeleteAllMovies(aYear)">Delete Movie before aYear</button>
 </div>
 
 
@@ -183,7 +183,7 @@
       <tr *ngFor="let item of moviesDB">
         <td>{{item.title}}</td>
         <td>{{item.year}}</td>
-        <td>{{item.actors.name}}</td>
+        <td *ngFor="let actor of item.actors">{{actor.name}}</td>
       </tr>
 
     </table>

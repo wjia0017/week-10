@@ -66,7 +66,7 @@ app.delete('/movies/:id/actors', movies.deleteActor)
 app.post('/movies/:id/id1', movies.updateActor);
 
 //6. Retrieve (GET) all the movies produced less than aYear, where aYear >year(**OK**)
-app.delete('/movies/:year/:aYear', movies.deleteMoviesByYear);
+app.delete('/movies/:aYear', movies.deleteMoviesByYear);
 
 //8. getAll movies such that it retrieves the details of all actors for each individual movie (**OK**)
 app.get('/movies', movies.getActors);
